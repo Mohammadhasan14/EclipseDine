@@ -1,13 +1,10 @@
+import Navbar from "./components/Navbar"
 
 
 function App() {
 
   return (
-   <div className="parent">
-    <div className="childone">Child One</div>
-    <div className="childtwo">Child Two</div>
-    <div className="childthree">Child Three</div>
-   </div>
+   <Navbar></Navbar>
   )
 }
 
