@@ -7,7 +7,6 @@ export default function Navbar() {
         <input className="search-bar" placeholder="Search here" type="text" />
         <div className="navbar-accont">My Account</div>
       </div>
-
     </div>
   )
 }
