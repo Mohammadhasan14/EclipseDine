@@ -1,15 +1,36 @@
 :root {
-    --bg-color: #f0f0f0;
+    --bg-color: #f8fafc;
     --primary-bg-color: #174143;
     --secondary-bg-color: #427A76;
     --primary-text-color: #F9B487;
     --secondary-text-color: #FFDBB6;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --hover-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--bg-color);
+    line-height: 1.6;
+}
+
+.app {
+    min-height: 100vh;
+}
+
+.navbar-parent {
+    height: 70px;
+    background-color: var(--primary-bg-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .navbar-child {
@@ -17,46 +38,236 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 100%;
-}
-
-.navbar-parent {
-    height: 60px;
-    background-color: var(--primary-bg-color);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .navbar-brand-name {
     color: var(--primary-text-color);
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
-    padding-left: 20px;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
 }
 
-.navbar-accont {
+.navbar-brand-name:hover {
+    opacity: 0.9;
+}
+
+.navbar-account {
     color: var(--secondary-text-color);
     font-size: 16px;
-    padding-right: 20px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .search-bar {
     width: 40%;
-    height: 28px;
-    border-radius: 5px;
+    max-width: 400px;
+    height: 40px;
+    border-radius: 25px;
+    border: 2px solid transparent;
+    padding: 0 20px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.search-bar:focus {
+    outline: none;
+    border-color: var(--primary-text-color);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.search-bar::placeholder {
+    color: var(--secondary-text-color);
+    opacity: 0.7;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, var(--primary-bg-color), var(--secondary-bg-color));
+    border-radius: 20px;
+    margin-bottom: 60px;
+    color: white;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--primary-text-color);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--secondary-text-color);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    background: var(--primary-text-color);
+    color: var(--primary-bg-color);
     border: none;
-    padding-left: 10px;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.card-1 {
-    background-color: var(--primary-bg-color);
-    width: 300px;
-    height: 200px;
-    margin: 20px;
-    border-radius: 10px;
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+    background: #ffa366;
 }
 
-.card-2 {
-    background-color: var(--secondary-bg-color);
-    width: 300px;
-    height: 200px;
-    margin: 20px;
-    border-radius: 10px;
+.features-section {
+    margin-bottom: 60px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-bg-color);
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.featured-card {
+    background: linear-gradient(135deg, var(--primary-bg-color), var(--secondary-bg-color));
+    color: white;
+}
+
+.standard-card {
+    background: white;
+    color: #333;
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: inherit;
+}
+
+.featured-card .card-title {
+    color: var(--primary-text-color);
+}
+
+.standard-card .card-title {
+    color: var(--primary-bg-color);
+}
+
+.card-description {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    color: inherit;
+    opacity: 0.9;
+}
+
+.card-button {
+    background: transparent;
+    border: 2px solid var(--primary-text-color);
+    color: var(--primary-text-color);
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+}
+
+.standard-card .card-button {
+    border-color: var(--primary-bg-color);
+    color: var(--primary-bg-color);
+}
+
+.card-button:hover {
+    background: var(--primary-text-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.standard-card .card-button:hover {
+    background: var(--primary-bg-color);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .navbar-child {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 20px;
+        gap: 15px;
+    }
+    
+    .search-bar {
+        width: 100%;
+        max-width: none;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .main-container {
+        padding: 20px 15px;
+    }
 }
