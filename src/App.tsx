@@ -7,9 +7,12 @@ function App() {
     <div>
       <Navbar />
       <div className="parent">
-        <div className="card-1">
-        </div>
-        <div className="card-2"></div>
+        {Array(12).fill(null).map((_, index) => {
+          return (
+            <div key={index + 1} className="card">
+            </div>
+          )
+        })}
       </div>
     </div>
   )
