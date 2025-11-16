@@ -1,92 +1,41 @@
 :root {
-    --bg-color: #f0f0f0;
-    --primary-bg-color: #174143;
-    --secondary-bg-color: #427A76;
-    --primary-text-color: #F9B487;
-    --secondary-text-color: #FFDBB6;
+    --primary-bg-color: #ffffff;
+    --secondary-bg-color: #e7000b;
+    --primary-text-color: #171717;
+    --secondary-text-color: #525252;
+    --transition: 0.5s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    padding: 0;
     background-color: var(--bg-color);
-}
+}   
 
-.navbar-child {
+.navbar-parent {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100%;
-}
-
-.navbar-parent {
-    height: 60px;
+    padding: 2rem;
+    border-bottom: 1px solid;
     background-color: var(--primary-bg-color);
+    box-shadow: 0 2px 4px rgba(243, 242, 242, 0.1);
 }
 
-.navbar-brand-name {
-    color: var(--primary-text-color);
-    font-size: 24px;
-    font-weight: bold;
-    padding-left: 20px;
-}
-
-.navbar-accont {
-    color: var(--secondary-text-color);
-    font-size: 16px;
-    padding-right: 20px;
-}
-
-.search-bar {
-    width: 40%;
-    height: 28px;
-    border-radius: 5px;
-    border: none;
-    padding: 4px 10px;
-}
-
-.card {
-    background-color: var(--primary-bg-color);
-    width: 300px;
-    height: 200px;
-    margin: 20px;
-    border-radius: 10px;
-    transition: transform 0.5s ease;
-}
-
-.parent {
+.navbar-links{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 25px;
-    gap: 35px;
-    min-height: 15vh;
-}
-
-.product-parent{
-    display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: auto;
     align-items: center;
 }
 
-.product-img {
-    position: relative;
-    transition: transform 0.5s ease;
-    cursor: pointer;
-    width: 300px;
-    height: 200px;
-    border-radius: 10px;
-    object-fit: contain;
-}
 
-.card:hover {
-    transform: scale(1.1);
-}
-
-.product-name{
-    font-size: 16px;
-    font-weight: bold;
-    color: var(--primary-bg-color);
-    margin-top: -6px;
+a {
+    text-decoration: none;
+    color: inherit;
 }
