@@ -23,38 +23,38 @@ body {
 .top-section-bg {
     position: absolute;
     object-fit: cover;
-    min-width: 100%;
+    width: 100%;
     z-index: -1;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
     box-shadow: 0 2px 4px rgba(243, 242, 242, 0.1);
 }
 
 .navbar-parent {
     position: fixed;
     top: 0;
-    display: flex;
     width: 100%;
+    padding: 2rem;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem;
-    border-bottom: 1px solid;
+
     background-color: transparent;
-    transition: background-clor 0.9s ease, backdrop-filter 0.9s ease;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+
+    transition: background-color 0.9s ease, backdrop-filter 0.9s ease;
     backdrop-filter: none;
     box-shadow: 0 2px 4px rgba(243, 242, 242, 0.1);
 }
 
 .navbar-parent.navbar-scrolled {
     background-color: var(--primary-bg-color);
-    backdrop-filter: 10px;
-    box-shadow: 0 2px 4px rgba(243, 242, 242, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 .navbar-links {
     display: flex;
-    justify-content: space-between;
-    gap: 2rem;
     align-items: center;
+    gap: 2rem;
 }
 
 a {
